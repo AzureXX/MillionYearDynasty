@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class DisplayPlayerStats : MonoBehaviour
 {
     [SerializeField] Player player;
+    [SerializeField] Text dexterityText;
+    [SerializeField] Text enduranceText;
+    [SerializeField] Text intellectText;
     [SerializeField] Text strengthText;
 
     // Start is called before the first frame update
@@ -17,6 +20,9 @@ public class DisplayPlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dexterityText.text = "Dexterity:" + player.GetComponent<Creatures>().GetDexterityExp;
+        enduranceText.text = "Endurance:" + player.GetComponent<Creatures>().GetEnduranceExp;
+        intellectText.text = "Intellect:" + player.GetComponent<Creatures>().GetIntellectExp;
         strengthText.text = "Strength:" + player.GetComponent<Creatures>().GetStrengthExp;
     }
 }
