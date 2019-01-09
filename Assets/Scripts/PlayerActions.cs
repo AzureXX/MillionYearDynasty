@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
+    Player player;
+
+    void Start()
+    {
+        player = FindObjectOfType<Player>();
+    }
+
     public void GatherWood()
     {
         if (ChangeEnergy(-5))
         {
-            GetComponent<Inventory>().AddItem(Resources.Load("Wood") as Item, 3);
+            player.GetComponent<Inventory>().AddItem(Resources.Load("Wood") as Item, 3);
         }
     }
 
@@ -16,7 +23,7 @@ public class PlayerActions : MonoBehaviour
     {
         if (ChangeEnergy(-5))
         {
-            GetComponent<Inventory>().AddItem(Resources.Load("Stone") as Item, 3);
+            player.GetComponent<Inventory>().AddItem(Resources.Load("Stone") as Item, 3);
         }
     }
 
@@ -24,28 +31,28 @@ public class PlayerActions : MonoBehaviour
     {
         if (ChangeEnergy(-5))
         {
-            GetComponent<Creatures>().SetDexterityExp(GetComponent<Creatures>().GetDexterityExp + 5);
+            player.GetComponent<Creatures>().SetDexterityExp(player.GetComponent<Creatures>().GetDexterityExp + 5);
         }
     }
     public void TrainEndurance()
     {
         if (ChangeEnergy(-5))
         {
-            GetComponent<Creatures>().SetEnduranceExp(GetComponent<Creatures>().GetEnduranceExp + 5);
+            player.GetComponent<Creatures>().SetEnduranceExp(player.GetComponent<Creatures>().GetEnduranceExp + 5);
         }
     }
     public void TrainIntellect()
     {
         if (ChangeEnergy(-5))
         {
-            GetComponent<Creatures>().SetIntellectExp(GetComponent<Creatures>().GetIntellectExp + 5);
+            player.GetComponent<Creatures>().SetIntellectExp(player.GetComponent<Creatures>().GetIntellectExp + 5);
         }
     }
     public void TrainStrength()
     {
         if (ChangeEnergy(-5))
         {
-            GetComponent<Creatures>().SetStrengthExp(GetComponent<Creatures>().GetStrengthExp + 5);
+            player.GetComponent<Creatures>().SetStrengthExp(player.GetComponent<Creatures>().GetStrengthExp + 5);
         }
 
     }
@@ -56,9 +63,9 @@ public class PlayerActions : MonoBehaviour
     }
     private bool ChangeEnergy(int value)
     {
-        if (GetComponent<Creatures>().GetEnergy + value >= 0) 
+        if (player.GetComponent<Creatures>().GetEnergy + value >= 0) 
         {
-            GetComponent<Creatures>().SetEnergy(GetComponent<Creatures>().GetEnergy + value);
+            player.GetComponent<Creatures>().SetEnergy(player.GetComponent<Creatures>().GetEnergy + value);
             return true;
         }
         else

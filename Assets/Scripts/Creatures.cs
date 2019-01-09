@@ -9,7 +9,7 @@ public class Creatures : MonoBehaviour
     [SerializeField] int hunger = 100;
     [SerializeField] int energy = 100;
     [SerializeField] int thirst = 100;
-    [SerializeField] int aggressiveness = 0;
+    [SerializeField] int aggression = 0;
     [Header("Stats")]
     [SerializeField] int dexterityExp = 0;
     [SerializeField] int enduranceExp = 0;
@@ -41,10 +41,10 @@ public class Creatures : MonoBehaviour
         energy = value;
     }
 
-    public int GetAggressiveness => aggressiveness;
-    public void SetAggressiveness(int value)
+    public int GetAggression => aggression;
+    public void SetAggression(int value)
     {
-        aggressiveness = value;
+        aggression = value;
     }
 
     public int GetDexterityExp => dexterityExp;

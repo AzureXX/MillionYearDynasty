@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DisplayPlayerStats : MonoBehaviour
 {
-    [SerializeField] Player player;
+    Player player;
     [SerializeField] Text dexterityText;
     [SerializeField] Text enduranceText;
     [SerializeField] Text intellectText;
@@ -14,7 +14,7 @@ public class DisplayPlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
