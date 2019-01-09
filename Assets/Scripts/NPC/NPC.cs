@@ -2,25 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour
+public class NPC : MonoBehaviour
 {
-
-
-    public static GameState instance = null;
-
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        else if (instance != this)
-            Destroy(gameObject);
-
+        DontDestroyOnLoad(gameObject);
     }
-
     // Start is called before the first frame update
     void Start()
     {
