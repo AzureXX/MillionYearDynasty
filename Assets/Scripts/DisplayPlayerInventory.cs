@@ -10,13 +10,12 @@ public class DisplayPlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         string newText = "Inventory: \n";
         var playerInventory = player.GetComponent<Inventory>().GetItemList;
         playerInventory.ForEach(item => {

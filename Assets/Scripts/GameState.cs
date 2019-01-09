@@ -6,18 +6,19 @@ public class GameState : MonoBehaviour
 {
 
 
+    public static GameState instance = null;
+
     private void Awake()
     {
-        int gameStateCount = FindObjectsOfType<GameState>().Length;
-        if (gameStateCount > 1)
+        if (instance == null)
         {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        else if (instance != this)
+            Destroy(gameObject);
+
     }
 
     // Start is called before the first frame update
