@@ -23,16 +23,10 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item, int amount)
     {
-        bool exist = itemList.Exists(row => row.item == item);
-        if(exist)
+        int index = itemList.FindIndex(row => row.item == item);
+        if(index > -1)
         {
-            foreach(InventorySlot row in itemList)
-            {
-                if(row.item == item)
-                {
-                    row.amount += amount;
-                }
-            }
+            itemList[index].amount += amount;
         }
         else
         {
