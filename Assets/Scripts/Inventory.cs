@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] List<InventorySlot> itemList = new List<InventorySlot>();
+    List<InventorySlot> itemList = new List<InventorySlot>();
 
     public List<InventorySlot> GetItemList => itemList;
 

@@ -13,16 +13,15 @@ public class SaveAndLoad : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.OpenOrCreate);
         PlayerData data = new PlayerData();
-        Creatures playerCreature = Player.instance.GetComponent<Creatures>();
-        data.health = playerCreature.GetHealth;
-        data.hunger = playerCreature.GetHunger;
-        data.energy = playerCreature.GetEnergy;
-        data.thirst = playerCreature.GetThirst;
-        data.aggression = playerCreature.GetAggression;
-        data.dexterityExp = playerCreature.GetDexterityExp;
-        data.enduranceExp = playerCreature.GetEnduranceExp;
-        data.intellectExp = playerCreature.GetIntellectExp;
-        data.strengthExp = playerCreature.GetStrengthExp;
+        data.health = Player.instance.Health;
+        data.hunger = Player.instance.Hunger;
+        data.energy = Player.instance.Energy;
+        data.thirst = Player.instance.Thirst;
+        data.aggression = Player.instance.Aggression;
+        data.dexterityExp = Player.instance.DexterityExp;
+        data.enduranceExp = Player.instance.EnduranceExp;
+        data.intellectExp = Player.instance.IntellectExp;
+        data.strengthExp = Player.instance.StrengthExp;
 
         bf.Serialize(file, data);
         file.Close();
@@ -36,16 +35,15 @@ public class SaveAndLoad : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
             PlayerData data = bf.Deserialize(file) as PlayerData;
             file.Close();
-            Creatures playerCreature = Player.instance.GetComponent<Creatures>();
-            playerCreature.SetHealth(data.health);
-            playerCreature.SetEnergy(data.energy);
-            playerCreature.SetHunger(data.hunger);
-            playerCreature.SetThirst(data.thirst);
-            playerCreature.SetAggression(data.aggression);
-            playerCreature.SetDexterityExp(data.dexterityExp);
-            playerCreature.SetEnduranceExp(data.enduranceExp);
-            playerCreature.SetIntellectExp(data.intellectExp);
-            playerCreature.SetStrengthExp(data.strengthExp);
+            Player.instance.Health = data.health;
+            Player.instance.Energy = data.energy;
+            Player.instance.Hunger = data.hunger;
+            Player.instance.Thirst = data.thirst;
+            Player.instance.Aggression = data.aggression;
+            Player.instance.DexterityExp = data.dexterityExp;
+            Player.instance.EnduranceExp = data.enduranceExp;
+            Player.instance.IntellectExp = data.intellectExp;
+            Player.instance.StrengthExp = data.strengthExp;
         }
     }
 }

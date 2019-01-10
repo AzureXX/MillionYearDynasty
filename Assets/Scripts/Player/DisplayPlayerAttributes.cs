@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class DisplayPlayerAttributes : MonoBehaviour
 {
     Player player;
-    Creatures playerCreature;
     [SerializeField] Text healthText;
     [SerializeField] Text energyText;
     [SerializeField] Text hungerText;
@@ -16,17 +15,17 @@ public class DisplayPlayerAttributes : MonoBehaviour
     void Start()
     {
         player = Player.instance;
-        playerCreature = player.GetComponent<Creatures>();
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health:" + playerCreature.GetHealth;
-        energyText.text = "Energy:" + playerCreature.GetEnergy;
-        hungerText.text = "Hunger:" + playerCreature.GetHunger;
-        thirstText.text = "Thirst:" + playerCreature.GetThirst;
-        aggressionText.text = "Aggression:" + playerCreature.GetAggression;
+        healthText.text = "Health:" + player.Health;
+        energyText.text = "Energy:" + player.Energy;
+        hungerText.text = "Hunger:" + player.Hunger;
+        thirstText.text = "Thirst:" + player.Thirst;
+        aggressionText.text = "Aggression:" + player.Aggression;
     }
 }

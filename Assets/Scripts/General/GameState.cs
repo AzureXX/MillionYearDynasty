@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
 
-    [SerializeField] int date = 0;
+    #region Singleton
     public static GameState instance = null;
 
     private void Awake()
@@ -20,6 +20,9 @@ public class GameState : MonoBehaviour
             Destroy(gameObject);
 
     }
+    #endregion
+
+    [SerializeField] int date = 0;
 
     // Start is called before the first frame update
     public void NextDate()
