@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Section")]
-public class Section : ScriptableObject
+[CreateAssetMenu(menuName = "ChunkStats")]
+public class ChunkStats : ScriptableObject
 {
     // Start is called before the first frame update
     void Start()
@@ -16,4 +17,6 @@ public class Section : ScriptableObject
     {
         
     }
+
+
 }

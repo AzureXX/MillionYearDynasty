@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<InventorySlot> ItemList { get; } = new List<InventorySlot>();
+    public List<InventorySlot> ItemList { get;  } = new List<InventorySlot>();
 
     // Start is called before the first frame update
 
