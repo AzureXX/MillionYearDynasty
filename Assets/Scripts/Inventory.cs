@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    List<InventorySlot> itemList = new List<InventorySlot>();
-
-    public List<InventorySlot> GetItemList => itemList;
+    public List<InventorySlot> ItemList { get; } = new List<InventorySlot>();
 
     // Start is called before the first frame update
 
@@ -23,15 +21,15 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item, int amount)
     {
-        int index = itemList.FindIndex(row => row.item == item);
+        int index = ItemList.FindIndex(row => row.item == item);
         if(index > -1)
         {
-            itemList[index].amount += amount;
+            ItemList[index].amount += amount;
         }
         else
         {
             InventorySlot newInventorySlot = new InventorySlot(item, amount);
-            itemList.Add(newInventorySlot);
+            ItemList.Add(newInventorySlot);
         }
 
     }

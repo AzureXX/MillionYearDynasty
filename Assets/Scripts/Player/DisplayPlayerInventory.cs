@@ -18,7 +18,7 @@ public class DisplayPlayerInventory : MonoBehaviour
     void Update()
     {
         string newText = "Inventory: \n";
-        var playerInventory = player.GetComponent<Inventory>().GetItemList;
+        var playerInventory = player.GetComponent<Inventory>().ItemList;
         playerInventory.ForEach(item => {
             newText += item.item + ": " + item.amount + "\n";
         });
