@@ -6,10 +6,12 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     Player player;
+    Creatures playerCreature;
     
     void Start()
     {
         player = Player.instance ;
+        playerCreature = player.GetComponent<Creatures>();
     }
 
 
@@ -40,7 +42,7 @@ public class PlayerActions : MonoBehaviour
         if (ChangeEnergy(-5))
         {
             GameState.instance.NextDate();
-            player.GetComponent<Creatures>().SetDexterityExp(player.GetComponent<Creatures>().GetDexterityExp + 5);
+            playerCreature.SetDexterityExp(playerCreature.GetDexterityExp + 5);
         }
     }
     public void TrainEndurance()
@@ -49,7 +51,7 @@ public class PlayerActions : MonoBehaviour
         if (ChangeEnergy(-5))
         {
             GameState.instance.NextDate();
-            player.GetComponent<Creatures>().SetEnduranceExp(player.GetComponent<Creatures>().GetEnduranceExp + 5);
+            playerCreature.SetEnduranceExp(playerCreature.GetEnduranceExp + 5);
         }
     }
     public void TrainIntellect()
@@ -58,7 +60,7 @@ public class PlayerActions : MonoBehaviour
         if (ChangeEnergy(-5))
         {
             GameState.instance.NextDate();
-            player.GetComponent<Creatures>().SetIntellectExp(player.GetComponent<Creatures>().GetIntellectExp + 5);
+            playerCreature.SetIntellectExp(playerCreature.GetIntellectExp + 5);
         }
     }
     public void TrainStrength()
@@ -67,7 +69,7 @@ public class PlayerActions : MonoBehaviour
         if (ChangeEnergy(-5))
         {
             GameState.instance.NextDate();
-            player.GetComponent<Creatures>().SetStrengthExp(player.GetComponent<Creatures>().GetStrengthExp + 5);
+            playerCreature.SetStrengthExp(playerCreature.GetStrengthExp + 5);
         }
 
     }
@@ -87,9 +89,9 @@ public class PlayerActions : MonoBehaviour
     private bool ChangeEnergy(int value)
     {
 
-        if (player.GetComponent<Creatures>().GetEnergy + value >= 0) 
+        if (playerCreature.GetEnergy + value >= 0) 
         {
-            player.GetComponent<Creatures>().SetEnergy(player.GetComponent<Creatures>().GetEnergy + value);
+            playerCreature.SetEnergy(playerCreature.GetEnergy + value);
             return true;
         }
         else

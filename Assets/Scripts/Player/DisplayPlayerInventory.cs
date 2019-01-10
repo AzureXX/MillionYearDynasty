@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DisplayPlayerInventory : MonoBehaviour
 {
     Player player;
+
     [SerializeField] Text inventoryText;
     // Start is called before the first frame update
     void Start()

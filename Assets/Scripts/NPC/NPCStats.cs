@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+[CreateAssetMenu(menuName = "NPCStats")]
+public class NPCStats : ScriptableObject
 {
 
-    [SerializeField] ScriptableObject stats;
+    [SerializeField] public int health = 100;
+    [SerializeField] string race = "human";
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

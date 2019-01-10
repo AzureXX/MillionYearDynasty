@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DisplayPlayerStats : MonoBehaviour
 {
     Player player;
+    Creatures playerCreature;
     [SerializeField] Text dexterityText;
     [SerializeField] Text enduranceText;
     [SerializeField] Text intellectText;
@@ -15,14 +16,15 @@ public class DisplayPlayerStats : MonoBehaviour
     void Start()
     {
         player = Player.instance;
+        playerCreature = player.GetComponent<Creatures>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dexterityText.text = "Dexterity:" + player.GetComponent<Creatures>().GetDexterityExp;
-        enduranceText.text = "Endurance:" + player.GetComponent<Creatures>().GetEnduranceExp;
-        intellectText.text = "Intellect:" + player.GetComponent<Creatures>().GetIntellectExp;
-        strengthText.text = "Strength:" + player.GetComponent<Creatures>().GetStrengthExp;
+        dexterityText.text = "Dexterity:" + playerCreature.GetDexterityExp;
+        enduranceText.text = "Endurance:" + playerCreature.GetEnduranceExp;
+        intellectText.text = "Intellect:" + playerCreature.GetIntellectExp;
+        strengthText.text = "Strength:" + playerCreature.GetStrengthExp;
     }
 }

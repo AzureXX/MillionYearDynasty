@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+[CreateAssetMenu(menuName = "Tile")]
+public class Tile : ScriptableObject
 {
-
-    [SerializeField] ScriptableObject stats;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

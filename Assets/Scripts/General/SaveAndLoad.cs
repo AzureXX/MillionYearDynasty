@@ -13,8 +13,16 @@ public class SaveAndLoad : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.OpenOrCreate);
         PlayerData data = new PlayerData();
-        data.playerHealth = 5;
-        data.playerEnergy = 100;
+        Creatures playerCreature = Player.instance.GetComponent<Creatures>();
+        data.health = playerCreature.GetHealth;
+        data.hunger = playerCreature.GetHunger;
+        data.energy = playerCreature.GetEnergy;
+        data.thirst = playerCreature.GetThirst;
+        data.aggression = playerCreature.GetAggression;
+        data.dexterityExp = playerCreature.GetDexterityExp;
+        data.enduranceExp = playerCreature.GetEnduranceExp;
+        data.intellectExp = playerCreature.GetIntellectExp;
+        data.strengthExp = playerCreature.GetStrengthExp;
 
         bf.Serialize(file, data);
         file.Close();
@@ -28,8 +36,16 @@ public class SaveAndLoad : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
             PlayerData data = bf.Deserialize(file) as PlayerData;
             file.Close();
-
-            Debug.Log(data.playerEnergy + ":" + data.playerHealth);
+            Creatures playerCreature = Player.instance.GetComponent<Creatures>();
+            playerCreature.SetHealth(data.health);
+            playerCreature.SetEnergy(data.energy);
+            playerCreature.SetHunger(data.hunger);
+            playerCreature.SetThirst(data.thirst);
+            playerCreature.SetAggression(data.aggression);
+            playerCreature.SetDexterityExp(data.dexterityExp);
+            playerCreature.SetEnduranceExp(data.enduranceExp);
+            playerCreature.SetIntellectExp(data.intellectExp);
+            playerCreature.SetStrengthExp(data.strengthExp);
         }
     }
 }
@@ -37,6 +53,14 @@ public class SaveAndLoad : MonoBehaviour
 [Serializable]
 class PlayerData
 {
-    public int playerHealth;
-    public int playerEnergy;
+    public int health = 100;
+    public int hunger = 100;
+    public int energy = 100;
+    public int thirst = 100;
+    public int aggression = 0;
+
+    public int dexterityExp = 0;
+    public int enduranceExp = 0;
+    public int intellectExp = 0;
+    public int strengthExp = 0;
 }

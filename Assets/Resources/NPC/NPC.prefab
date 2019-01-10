@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1387810120402182193}
   - component: {fileID: 1387810120402182192}
   - component: {fileID: 1387810120402182199}
-  - component: {fileID: 1387810120402182198}
+  - component: {fileID: 2870741895373253518}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MonoBehaviour:
   enduranceExp: 0
   intellectExp: 0
   strengthExp: 0
---- !u!114 &1387810120402182198
+--- !u!114 &2870741895373253518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,3 +91,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f863a326934294a5b8c469514e1aff88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 3b3cb62cdb1974b0f918b6cb3433b3b4, type: 2}
