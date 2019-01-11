@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SectorStats")]
 public class SectorStats : ScriptableObject
 {
+    [SerializeField] string type;
     // Start is called before the first frame update
     void Start()
     {

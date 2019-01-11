@@ -21,11 +21,12 @@ public class MapState : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] 
+    [SerializeField] List<Sector> sectors = new List<Sector>();
+
     // Start is called before the first frame update
     void Start()
     {
-
+        sectors.Add(new Sector("Plain", new Vector2(0, 0)));
     }
 
     // Update is called once per frame

@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ChunkStats")]
 public class ChunkStats : ScriptableObject
 {
+    [SerializeField] string type;
     // Start is called before the first frame update
     void Start()
     {
