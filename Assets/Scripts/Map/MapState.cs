@@ -26,11 +26,15 @@ public class MapState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void GenerateInitialSector()
+    {
+        Debug.Log("Generation of initial Sector started");
         sectors.Add(new Sector("Plain", new Vector2(0, 0)));
-        int chunkIndex = FindIndexFromXY(new Vector2(-2, 0));
-        int tileIndex = FindIndexFromXY(new Vector2(-3, 0));
-        Debug.Log(sectors[0].Chunks[chunkIndex].ChunkXY);
-        Debug.Log(sectors[0].Chunks[chunkIndex].Tiles[tileIndex].TileXY);
+        Debug.Log("Generation of initial Sector ended");
+
     }
 
     // Update is called once per frame

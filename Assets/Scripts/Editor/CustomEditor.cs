@@ -2,8 +2,8 @@
 using System.Collections;
 using UnityEditor;
 
-[UnityEditor.CustomEditor(typeof(NPCList))]
-public class CustomEditor : Editor
+[CustomEditor(typeof(NPCList))]
+public class EditorAddNPC : Editor
 {
 
     public override void OnInspectorGUI()
@@ -17,6 +17,28 @@ public class CustomEditor : Editor
             if (Application.isPlaying)
             {
                 script.AddNPC();
+            }
+        }
+
+    }
+
+}
+
+[CustomEditor(typeof(MapState))]
+public class EditorMapState : Editor
+{
+
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        var script = (MapState)target;
+
+        if (GUILayout.Button("GenerateInitialSector"))
+        {
+            if (Application.isPlaying)
+            {
+                script.GenerateInitialSector();
             }
         }
 
