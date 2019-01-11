@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sector : MonoBehaviour
+public class Sector
 {
     [SerializeField] SectorStats stats;
     [SerializeField] List<Chunk> chunks = new List<Chunk>();
@@ -21,6 +21,9 @@ public class Sector : MonoBehaviour
             }
         }
     }
+
+    public List<Chunk> Chunks { get => chunks; set => chunks = value; }
+    public Vector2 SectorXY { get => sectorXY; set => sectorXY = value; }
 
 
     // Start is called before the first frame update

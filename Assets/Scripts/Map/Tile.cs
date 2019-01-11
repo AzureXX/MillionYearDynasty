@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile
 {
 
     [SerializeField] TileStats stats;
@@ -18,6 +18,10 @@ public class Tile : MonoBehaviour
         this.sectorXY = sectorXY;
         stats = (TileStats)Resources.Load("Map/Tiles/" + type);
     }
+
+    public Vector2 TileXY { get => tileXY; set => tileXY = value; }
+    public Vector2 ChunkXY { get => chunkXY; set => chunkXY = value; }
+    public Vector2 SectorXY { get => sectorXY; set => sectorXY = value; }
 
 
     // Start is called before the first frame update

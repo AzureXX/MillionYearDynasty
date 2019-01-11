@@ -82,9 +82,7 @@ public class PlayerActions : MonoBehaviour
 
     public void AddCitizen()
     {
-
-        GameObject npc = Resources.Load("NPC/NPC") as GameObject;
-        Instantiate(npc, new Vector3(0, 0, 0), Quaternion.identity);
+        FindObjectOfType<NPCList>().AddNPC();
     }
     private bool ChangeEnergy(int value)
     {
