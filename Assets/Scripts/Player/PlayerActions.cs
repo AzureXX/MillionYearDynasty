@@ -83,6 +83,7 @@ public class PlayerActions : MonoBehaviour
     public void AddCitizen()
     {
         FindObjectOfType<NPCList>().AddNPC();
+
     }
     private bool ChangeEnergy(int value)
     {
