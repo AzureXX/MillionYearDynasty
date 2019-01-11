@@ -14,14 +14,10 @@ public class Tile : MonoBehaviour
     public Tile(string type, Vector2 tileXY, Vector2 chunkXY, Vector2 sectorXY)
     {
         this.tileXY = tileXY;
-        this.ChunkXY = chunkXY;
+        this.chunkXY = chunkXY;
         this.sectorXY = sectorXY;
         stats = (TileStats)Resources.Load("Map/Tiles/" + type);
     }
-
-    public Vector2 TileXY { get => tileXY; set => tileXY = value; }
-    public Vector2 ChunkXY { get => chunkXY; set => chunkXY = value; }
-    public Vector2 SectorXY { get => sectorXY; set => sectorXY = value; }
 
 
     // Start is called before the first frame update
