@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77dadc8d07064560b91caedde3a72a4, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  type: Resource
+  type: Resources
   name: Stone

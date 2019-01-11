@@ -588,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 1869417057763481671, guid: 6fcaf2c22269e494784da5c5a09838ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GatherWood
+      value: GatherStone
       objectReference: {fileID: 0}
     - target: {fileID: 1869417056660191406, guid: 6fcaf2c22269e494784da5c5a09838ab,
         type: 3}

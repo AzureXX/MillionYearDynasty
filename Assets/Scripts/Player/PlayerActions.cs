@@ -20,7 +20,6 @@ public class PlayerActions : MonoBehaviour
 
         if (ChangeEnergy(-5))
         {
-            Debug.Log(player);
             GameState.instance.NextDate();
             player.GetComponent<Inventory>().AddItem(Resources.Load("Items/RawResources/Wood") as Item, 3);
         }
