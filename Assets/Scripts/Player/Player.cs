@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Player : MonoBehaviour
 {
     #region Singleton
@@ -53,6 +52,36 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Camera.main.gameObject.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y, -10f);
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            FindObjectOfType<PlayerActions>().GoSouth();
+            Debug.Log("Going South");
 
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            FindObjectOfType<PlayerActions>().GoNorth();
+            Debug.Log("Going North");
+
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            FindObjectOfType<PlayerActions>().GoEast();
+            Debug.Log("Going East");
+
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            FindObjectOfType<PlayerActions>().GoWest();
+            Debug.Log("Going West");
+
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log(instance.Health);
+        Debug.Log(instance.transform.position);
     }
 }

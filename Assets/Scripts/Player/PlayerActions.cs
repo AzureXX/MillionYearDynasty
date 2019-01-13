@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,6 @@ public class PlayerActions : MonoBehaviour
         player = Player.instance ;
 
     }
-
 
     public void GatherWood()
     {
@@ -97,5 +97,29 @@ public class PlayerActions : MonoBehaviour
             return false;
         }
 
+    }
+
+    public void GoNorth()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = new Vector3(pos.x, Mathf.Clamp(pos.y + 1, 0, 120f), pos.z);
+    }
+
+    public void GoSouth()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = new Vector3(pos.x, Mathf.Clamp(pos.y - 1, 0, 120f), pos.z);
+    }
+
+    public void GoEast()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = new Vector3(Mathf.Clamp(pos.x + 1, 0, 120), pos.y , pos.z);
+    }
+
+    public void GoWest()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = (new Vector3(Mathf.Clamp(pos.x - 1, 0, 120), pos.y, pos.z));
     }
 }

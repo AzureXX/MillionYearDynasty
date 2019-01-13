@@ -34,14 +34,22 @@ public class EditorMapState : Editor
 
         var script = (MapState)target;
 
-        if (GUILayout.Button("GenerateInitialSector"))
+        if (GUILayout.Button("Generate Initial Sector"))
         {
             if (Application.isPlaying)
             {
                 script.GenerateInitialSector();
             }
         }
+        if (GUILayout.Button("Get All Child Chunks"))
+        {
+            if (Application.isPlaying)
+            {
+                script.GetAllChunks();
+            }
+        }
 
     }
 
 }
+

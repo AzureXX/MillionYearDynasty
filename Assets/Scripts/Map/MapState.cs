@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MapState : MonoBehaviour
 {
@@ -20,33 +22,47 @@ public class MapState : MonoBehaviour
 
     }
     #endregion
-
-    [SerializeField] List<Sector> sectors = new List<Sector>();
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void GenerateInitialSector()
     {
-        Debug.Log("Generation of initial Sector started");
-        sectors.Add(new Sector("Plain", new Vector2(0, 0)));
-        Debug.Log("Generation of initial Sector ended");
+        DateTime before = DateTime.Now;
 
+        GameObject sectorPrefab = Resources.Load("Map/Sectors/Sector") as GameObject;
+        GameObject sector = Instantiate(sectorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        sector.transform.parent = transform;
+        var SectorStats = sector.GetComponent<SectorScript>();
+        SectorStats.SectorXY = new Vector2Int(0, 0);
+        SectorStats.GenerateChunks(SectorStats.SectorXY);
+
+        DateTime after = DateTime.Now;
+        TimeSpan duration = after.Subtract(before);
+        Debug.Log("Duration in milliseconds: " + duration.Milliseconds);
+    }
+
+    public void GetAllChunks()
+    {
+        foreach(Transform sector in transform)
+        {
+            foreach(Transform chunk in sector)
+            {
+                foreach(Transform tile in chunk)
+                {
+                    tile.localScale = new Vector3(1,1,1);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-
-    public int FindIndexFromXY(Vector2 xy)
-    {
-        return (int)(xy.x * 9 + (int)xy.y + 40);
     }
 
 }

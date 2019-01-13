@@ -14,4 +14,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Inventory");
     }
+
+    public void LoadMapScene()
+    {
+        SceneManager.LoadScene("Map");
+    }
 }
