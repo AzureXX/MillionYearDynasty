@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunkScript : MonoBehaviour 
+public class ChunkObject 
 {
     [SerializeField] ChunkStats stats;
-    [SerializeField] List<TileScript> tiles = new List<TileScript>();
+    [SerializeField] List<TileObject> tiles = new List<TileObject>();
     [SerializeField] Vector2Int chunkXY;
     [SerializeField] Vector2Int sectorXY;
 
-   
+    public ChunkObject(Vector2Int chunkXY, Vector2Int sectorXY)
+    {
+        ChunkXY = chunkXY;
+        SectorXY = sectorXY;
+    }
 
-    public List<TileScript> Tiles { get => tiles; set => tiles = value; }
+    public List<TileObject> Tiles { get => tiles; set => tiles = value; }
     public Vector2Int ChunkXY { get => chunkXY; set => chunkXY = value; }
     public Vector2Int SectorXY { get => sectorXY; set => sectorXY = value; }
 
@@ -36,14 +40,7 @@ public class ChunkScript : MonoBehaviour
         {
             for (int j = 0; j < 11; j++)
             {
-                int tilePosX = i + 11 * chunkXY.x + 121 * sectorXY.x;
-                int tilePosY = j + 11 * chunkXY.y + 121 * sectorXY.y;
-                GameObject tile = Instantiate(tilePrefab, new Vector3(tilePosX, tilePosY, 0), Quaternion.identity);
-                tile.transform.parent = transform;
-                var tileStats = tile.GetComponent<TileScript>();
-                tileStats.SectorXY = sectorXY;
-                tileStats.ChunkXY = chunkXY;
-                tileStats.TileXY = new Vector2Int(i, j);
+
             }
         }
 

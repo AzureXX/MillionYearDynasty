@@ -34,12 +34,7 @@ public class MapState : MonoBehaviour
     {
         DateTime before = DateTime.Now;
 
-        GameObject sectorPrefab = Resources.Load("Map/Sectors/Sector") as GameObject;
-        GameObject sector = Instantiate(sectorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        sector.transform.parent = transform;
-        var SectorStats = sector.GetComponent<SectorScript>();
-        SectorStats.SectorXY = new Vector2Int(0, 0);
-        SectorStats.GenerateChunks(SectorStats.SectorXY);
+
 
         DateTime after = DateTime.Now;
         TimeSpan duration = after.Subtract(before);

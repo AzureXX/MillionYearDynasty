@@ -122,4 +122,28 @@ public class PlayerActions : MonoBehaviour
         Vector3 pos = player.transform.position;
         player.transform.position = (new Vector3(Mathf.Clamp(pos.x - 1, 0, 120), pos.y, pos.z));
     }
+
+    public void GoNorthWest()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = (new Vector3(Mathf.Clamp(pos.x - 1, 0, 120), Mathf.Clamp(pos.y + 1, 0, 120f), pos.z));
+    }
+
+    public void GoNorthEast()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = (new Vector3(Mathf.Clamp(pos.x + 1, 0, 120), Mathf.Clamp(pos.y + 1, 0, 120f), pos.z));
+    }
+
+    public void GoSouthWest()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = (new Vector3(Mathf.Clamp(pos.x - 1, 0, 120), Mathf.Clamp(pos.y - 1, 0, 120f), pos.z));
+    }
+
+    public void GoSouthEast()
+    {
+        Vector3 pos = player.transform.position;
+        player.transform.position = (new Vector3(Mathf.Clamp(pos.x + 1, 0, 120), Mathf.Clamp(pos.y - 1, 0, 120f), pos.z));
+    }
 }

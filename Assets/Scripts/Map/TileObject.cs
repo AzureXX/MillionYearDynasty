@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileScript : MonoBehaviour
+public class TileObject 
 {
 
     [SerializeField] TileStats stats;
@@ -10,6 +10,13 @@ public class TileScript : MonoBehaviour
     [SerializeField] Vector2Int chunkXY;
     [SerializeField] Vector2Int sectorXY;
 
+    public TileObject(Vector2Int tileXY, Vector2Int chunkXY, Vector2Int sectorXY)
+    {
+
+        TileXY = tileXY;
+        ChunkXY = chunkXY;
+        SectorXY = sectorXY;
+    }
 
     public Vector2Int TileXY { get => tileXY; set => tileXY = value; }
     public Vector2Int ChunkXY { get => chunkXY; set => chunkXY = value; }
@@ -26,9 +33,5 @@ public class TileScript : MonoBehaviour
     void Update()
     {
         
-    }
-    private void OnMouseDown()
-    {
-        Debug.Log(transform.position);
     }
 }
