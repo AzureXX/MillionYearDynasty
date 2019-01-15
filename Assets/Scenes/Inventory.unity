@@ -537,17 +537,17 @@ PrefabInstance:
     - target: {fileID: 1468910287557064592, guid: c4199261308064bc6a76fa5023f1790e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 106.929924
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1468910287557064592, guid: c4199261308064bc6a76fa5023f1790e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 349.80908
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1468910287557064592, guid: c4199261308064bc6a76fa5023f1790e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.216826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1468910287557064592, guid: c4199261308064bc6a76fa5023f1790e,
         type: 3}
@@ -936,7 +936,7 @@ RectTransform:
   - {fileID: 369179284666204120}
   - {fileID: 4210844152614870725}
   - {fileID: 4210844151317843506}
-  - {fileID: 4210844152118416648}
+  - {fileID: 7173116796708436564}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1003,12 +1003,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4210844152118416648 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6477279944249257819, guid: ba32c24bcd211415cb2632c9cce2b0bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 7173116796708436563}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4210844152614870724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1554,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4210844152064054203}
     m_Modifications:
+    - target: {fileID: 8355101190647790721, guid: ba32c24bcd211415cb2632c9cce2b0bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6477279944249257816, guid: ba32c24bcd211415cb2632c9cce2b0bb,
         type: 3}
       propertyPath: m_Name
@@ -1672,6 +1671,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba32c24bcd211415cb2632c9cce2b0bb, type: 3}
+--- !u!224 &7173116796708436564 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8355101190647790721, guid: ba32c24bcd211415cb2632c9cce2b0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7173116796708436563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &7629574440308700123
 CanvasRenderer:
   m_ObjectHideFlags: 0

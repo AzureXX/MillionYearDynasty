@@ -26,8 +26,7 @@ public class MapState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Tilemap tilemap = FindObjectOfType<Tilemap>();
-        Debug.Log(tilemap.name);
+
     }
 
     public void GenerateInitialSector()

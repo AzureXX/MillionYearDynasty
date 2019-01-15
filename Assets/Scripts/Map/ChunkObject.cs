@@ -40,7 +40,7 @@ public class ChunkObject
         {
             for (int j = 0; j < 11; j++)
             {
-
+                Tiles.Add(new TileObject(sectorXY, chunkXY, new Vector2Int(i, j)));
             }
         }
 

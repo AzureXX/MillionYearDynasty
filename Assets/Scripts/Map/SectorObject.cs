@@ -11,6 +11,7 @@ public class SectorObject
     public SectorObject(Vector2Int sectorXY)
     {
         SectorXY = sectorXY;
+        GenerateChunks(sectorXY);
     }
 
     public List<ChunkObject> Chunks { get => chunks; set => chunks = value; }
@@ -33,16 +34,12 @@ public class SectorObject
 
     public void GenerateChunks(Vector2Int sectorXY)
     {
-        GameObject chunkPrefab = Resources.Load("Map/Chunks/Chunk") as GameObject;
-
         for(int i = 0; i < 11; i++)
         {
             for(int j = 0; j< 11; j++)
             {
-
+                Chunks.Add(new ChunkObject(sectorXY, new Vector2Int(i, j)));
             }
         }
-      
-
     }
 }
