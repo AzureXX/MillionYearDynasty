@@ -7,7 +7,7 @@ public class GameState : MonoBehaviour
 
     #region Singleton
     public static GameState instance = null;
-
+    public int idCounter = 1;
     private void Awake()
     {
         if (instance == null)
