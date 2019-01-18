@@ -52,30 +52,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Camera.main.gameObject.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y, -10f);
+        Camera.main.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y, -10f);
         if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             FindObjectOfType<PlayerActions>().GoSouth();
-            Debug.Log("Going South");
-
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             FindObjectOfType<PlayerActions>().GoNorth();
-            Debug.Log("Going North");
-
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             FindObjectOfType<PlayerActions>().GoEast();
-            Debug.Log("Going East");
-
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             FindObjectOfType<PlayerActions>().GoWest();
-            Debug.Log("Going West");
-
         }
     }
 

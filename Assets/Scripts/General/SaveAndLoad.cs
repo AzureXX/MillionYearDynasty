@@ -12,17 +12,21 @@ public class SaveAndLoad : MonoBehaviour
         Debug.Log("Saving to:" + Application.persistentDataPath);
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.OpenOrCreate);
-        PlayerData data = new PlayerData();
-        data.health = Player.instance.Health;
-        data.hunger = Player.instance.Hunger;
-        data.energy = Player.instance.Energy;
-        data.thirst = Player.instance.Thirst;
-        data.aggression = Player.instance.Aggression;
-        data.dexterityExp = Player.instance.DexterityExp;
-        data.enduranceExp = Player.instance.EnduranceExp;
-        data.intellectExp = Player.instance.IntellectExp;
-        data.strengthExp = Player.instance.StrengthExp;
-
+        PlayerData data = new PlayerData
+        {
+            health = Player.instance.Health,
+            hunger = Player.instance.Hunger,
+            energy = Player.instance.Energy,
+            thirst = Player.instance.Thirst,
+            aggression = Player.instance.Aggression,
+            dexterityExp = Player.instance.DexterityExp,
+            enduranceExp = Player.instance.EnduranceExp,
+            intellectExp = Player.instance.IntellectExp,
+            strengthExp = Player.instance.StrengthExp,
+            posX = Player.instance.transform.position.x,
+            posY = Player.instance.transform.position.y,
+            posZ = Player.instance.transform.position.z
+        };
         bf.Serialize(file, data);
         file.Close();
     }
@@ -44,6 +48,7 @@ public class SaveAndLoad : MonoBehaviour
             Player.instance.EnduranceExp = data.enduranceExp;
             Player.instance.IntellectExp = data.intellectExp;
             Player.instance.StrengthExp = data.strengthExp;
+            Player.instance.transform.position = new Vector3(data.posX, data.posY, data.posZ);
         }
     }
 }
@@ -61,4 +66,7 @@ class PlayerData
     public int enduranceExp = 0;
     public int intellectExp = 0;
     public int strengthExp = 0;
+    public float posX = 0f;
+    public float posY = 0f;
+    public float posZ = -1f;
 }

@@ -27,6 +27,7 @@ public class NPCList : MonoBehaviour
         GameObject npc = Resources.Load("NPC/NPC") as GameObject;
         GameObject newNPC = Instantiate(npc, new Vector3(0, 0, 0), Quaternion.identity);
         newNPC.transform.parent = transform;
+        newNPC.transform.position = new Vector3(Random.Range(0, 121), Random.Range(0, 121), -1);
     }
     // Start is called before the first frame update
     void Start()

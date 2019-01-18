@@ -9,10 +9,11 @@ public class ChunkObject
     [SerializeField] Vector2Int chunkXY;
     [SerializeField] Vector2Int sectorXY;
 
-    public ChunkObject(Vector2Int chunkXY, Vector2Int sectorXY)
+    public ChunkObject(Vector2Int sectorXY, Vector2Int chunkXY)
     {
         ChunkXY = chunkXY;
         SectorXY = sectorXY;
+        GenerateTiles(sectorXY, chunkXY);
     }
 
     public List<TileObject> Tiles { get => tiles; set => tiles = value; }
@@ -35,12 +36,14 @@ public class ChunkObject
     {
 
         GameObject tilePrefab = Resources.Load("Map/Tiles/Tile") as GameObject;
-
+        string[] types = { "Plain", "Sand" };
         for (int i = 0; i < 11; i++)
         {
             for (int j = 0; j < 11; j++)
             {
-                Tiles.Add(new TileObject(sectorXY, chunkXY, new Vector2Int(i, j)));
+
+                string type = types[Random.Range(0,2)];
+                Tiles.Add(new TileObject(sectorXY, chunkXY, new Vector2Int(i, j), type));
             }
         }
 

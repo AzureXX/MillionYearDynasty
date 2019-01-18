@@ -1,20 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "TileStats")]
 public class TileStats : ScriptableObject
 {
     [SerializeField] string type;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] TileBase tileAsset;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string Type { get => type; set => type = value; }
+    public TileBase TileAsset { get => tileAsset; set => tileAsset = value; }
 }

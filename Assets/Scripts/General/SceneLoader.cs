@@ -10,6 +10,8 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Actions");
         Player.instance.GetComponent<BoxCollider2D>().enabled = false;
         Player.instance.GetComponent<SpriteRenderer>().enabled = false;
+        MapState.instance.GetComponentInChildren<Grid>().enabled = false;
+
     }
 
     public void LoadInventoryScene()
@@ -17,6 +19,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Inventory");
         Player.instance.GetComponent<BoxCollider2D>().enabled = false;
         Player.instance.GetComponent<SpriteRenderer>().enabled = false;
+        MapState.instance.GetComponentInChildren<Grid>().enabled = false;
     }
 
     public void LoadMapScene()
@@ -24,5 +27,6 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Map");
         Player.instance.GetComponent<BoxCollider2D>().enabled = true;
         Player.instance.GetComponent<SpriteRenderer>().enabled = true;
+        MapState.instance.GetComponentInChildren<Grid>().enabled = true;
     }
 }

@@ -22,33 +22,31 @@ public class MapState : MonoBehaviour
 
     }
     #endregion
-    
+
+    [SerializeField] List<SectorObject> sectors = new List<SectorObject>();
+
+    public List<SectorObject> Sectors { get => sectors; set => sectors = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        GenerateInitialSector();
     }
 
     public void GenerateInitialSector()
     {
-        DateTime before = DateTime.Now;
-
-
-
-        DateTime after = DateTime.Now;
-        TimeSpan duration = after.Subtract(before);
-        Debug.Log("Duration in milliseconds: " + duration.Milliseconds);
+        Sectors.Add(new SectorObject(new Vector2Int(0, 0)));
     }
 
     public void GetAllChunks()
     {
-        foreach(Transform sector in transform)
+        foreach(SectorObject sector in sectors)
         {
-            foreach(Transform chunk in sector)
+            foreach(ChunkObject chunk in sector.Chunks)
             {
-                foreach(Transform tile in chunk)
+                foreach(TileObject tile in chunk.Tiles)
                 {
-                    tile.localScale = new Vector3(1,1,1);
+                    Debug.Log(tile.SectorXY + " : " + tile.ChunkXY + ":" + tile.TileXY);
                 }
             }
         }
