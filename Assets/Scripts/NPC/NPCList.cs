@@ -29,16 +29,13 @@ public class NPCList : MonoBehaviour
         newNPC.transform.parent = transform;
         newNPC.transform.position = new Vector3(Random.Range(0, 121), Random.Range(0, 121), -1);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void MakeAllNPCActions()
     {
-        
+        foreach (Transform npc in transform)
+        {
+            npc.GetComponent<NPCActions>().MakeAMove();
+        }
     }
 
 }

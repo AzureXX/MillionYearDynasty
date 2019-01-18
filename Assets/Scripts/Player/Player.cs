@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public int Energy { get => _energy; set => _energy = value; }
     public int Thirst { get => _thirst; set => _thirst = value; }
     public int Aggression { get => _aggression; set => _aggression = value; }
+    public int MovementPoints { get => _movementPoints; set => _movementPoints = value; }
+
     public int DexterityExp { get => _dexterityExp; set => _dexterityExp = value; }
     public int EnduranceExp { get => _enduranceExp; set => _enduranceExp = value; }
     public int IntellectExp { get => _intellectExp; set => _intellectExp = value; }
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
     [SerializeField] int _energy = 100;
     [SerializeField] int _thirst = 100;
     [SerializeField] int _aggression = 100;
+    [SerializeField] int _movementPoints = 100;
     [Header("Stats")]
     [SerializeField] int _dexterityExp = 0;
     [SerializeField] int _enduranceExp = 0;

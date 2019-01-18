@@ -27,6 +27,7 @@ public class SaveAndLoad : MonoBehaviour
             posY = Player.instance.transform.position.y,
             posZ = Player.instance.transform.position.z
         };
+
         bf.Serialize(file, data);
         file.Close();
     }

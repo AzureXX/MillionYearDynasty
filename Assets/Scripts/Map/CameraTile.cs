@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class CameraTile : MonoBehaviour
 {
-
     private void OnMouseUpAsButton()
     {
         Debug.Log(transform.position);
     }
-
 }

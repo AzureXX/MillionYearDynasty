@@ -19,6 +19,13 @@ public class EditorAddNPC : Editor
                 script.AddNPC();
             }
         }
+        if (GUILayout.Button("New Day"))
+        {
+            if (Application.isPlaying)
+            {
+                script.MakeAllNPCActions();
+            }
+        }
 
     }
 
